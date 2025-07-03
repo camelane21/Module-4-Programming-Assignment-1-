@@ -33,3 +33,25 @@ public class Exercise12_20 {
             }
         }
     }
+     public static void removePackageStatement(File file, String packageName) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line = reader.readLine();
+            // Skip package statement if it matches exactly
+            if (line != null && line.trim().equals("package " + packageName + ";")) {
+                line = reader.readLine(); // skip the package line
+            }
+            while (line != null) {
+                lines.add(line);
+                line = reader.readLine();
+            }
+        }
+
+        // Write back the updated lines
+        try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
+            for (String updatedLine : lines) {
+                writer.println(updatedLine);
+            }
+        }
+    }
+}
