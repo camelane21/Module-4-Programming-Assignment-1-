@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Exercise12_20 {
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.out.println("Usage: java Exercise12_20 srcRootDirectory");
