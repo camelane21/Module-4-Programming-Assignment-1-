@@ -21,4 +21,15 @@ public class Exercise12_20 {
             }
         }
     }
-}
+ public static void processDirectory(File dir, String packageName) throws IOException {
+        File[] files = dir.listFiles();
+        if (files == null) return;
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                processDirectory(file, packageName);
+            } else if (file.getName().endsWith(".java")) {
+                removePackageStatement(file, packageName);
+            }
+        }
+    }
