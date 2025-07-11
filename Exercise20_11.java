@@ -1,15 +1,15 @@
 import java.io.*;
 import java.util.Stack;
 
-public class Main {
+public class Exercise20_11 {
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.err.println("Usage: java Main <JavaSourceFile>");
+            System.err.println("Usage: java Exercise20_11 <JavaSourceFile>");
             System.exit(1);
         }
 
         File file = new File(args[0]);
-        if (!file.exists() || !file.isFile()) 
+        if (!file.exists() || !file.isFile()) {
             System.err.println("File not found: " + args[0]);
             System.exit(2);
         }
@@ -21,7 +21,7 @@ public class Main {
             String line;
             int lineNumber = 0;
 
-           
+            // 1) Read & print file, and simultaneously check grouping
             while ((line = reader.readLine()) != null) {
                 lineNumber++;
                 System.out.println(line);
@@ -54,6 +54,7 @@ public class Main {
                 }
             }
 
+            // 2) After reading all lines, stack must be empty
             if (!stack.isEmpty()) {
                 System.out.println("Grouping symbols are NOT correctly paired.");
                 System.exit(3);
