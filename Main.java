@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Stack;
 
-public class Exercise20_11 {
+public class main {
     public static void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java Exercise20_11 <JavaSourceFile>");
