@@ -1,10 +1,10 @@
 import java.io.*;
 import java.util.Stack;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.err.println("Usage: java Exercise20_11 <JavaSourceFile>");
+            System.err.println("Usage: java Main <JavaSourceFile>");
             System.exit(1);
         }
 
